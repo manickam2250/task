@@ -1,3 +1,4 @@
+import os
 from os import walk
 for root,dir,files in walk("/home/manikam/projects"):
     # print(root,"--------->",dir,"------>",files)
@@ -5,4 +6,9 @@ for root,dir,files in walk("/home/manikam/projects"):
 
       
           if j[-1:-4:-1] == "txt":
-              print(j)
+
+            if dir==[]:  
+              with open (f"{root}/{j}","r") as file1:
+                  data=file1.read()
+                  print(data)
+                  break
